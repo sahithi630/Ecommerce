@@ -4,7 +4,7 @@
       "UpstreamPathTemplate": "/gateway/user/login",
       "UpstreamHttpMethod": [ "POST" ],
       "DownstreamPathTemplate": "/api/user/login",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -16,7 +16,7 @@
       "UpstreamPathTemplate": "/gateway/user/signup",
       "UpstreamHttpMethod": [ "POST" ],
       "DownstreamPathTemplate": "/api/user/signup",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -28,7 +28,7 @@
       "UpstreamPathTemplate": "/gateway/products",
       "UpstreamHttpMethod": [ "GET", "POST" ],
       "DownstreamPathTemplate": "/api/Product",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -40,7 +40,7 @@
       "UpstreamPathTemplate": "/gateway/products/{id}",
       "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
       "DownstreamPathTemplate": "/api/Product/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -52,7 +52,7 @@
       "UpstreamPathTemplate": "/gateway/orders",
       "UpstreamHttpMethod": [ "GET", "POST" ],
       "DownstreamPathTemplate": "/api/Order",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -64,7 +64,7 @@
       "UpstreamPathTemplate": "/gateway/orders/{id}",
       "UpstreamHttpMethod": [ "GET", "DELETE" ],
       "DownstreamPathTemplate": "/api/Order/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -76,7 +76,7 @@
       "UpstreamPathTemplate": "/gateway/orders/{id}/status",
       "UpstreamHttpMethod": [ "PUT" ],
       "DownstreamPathTemplate": "/api/Order/{id}/status",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",

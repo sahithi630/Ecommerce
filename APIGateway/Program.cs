@@ -72,9 +72,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Gateway v1");
-        c.SwaggerEndpoint("https://localhost:5162/swagger/v1/swagger.json", "UserServices API v1");
-        c.SwaggerEndpoint("https://localhost:5085/swagger/v1/swagger.json", "ProductService API v1");
-        c.SwaggerEndpoint("https://localhost:5106/swagger/v1/swagger.json", "OrderService API v1");
+        c.SwaggerEndpoint("http://localhost:5162/swagger/v1/swagger.json", "UserServices API v1");
+        c.SwaggerEndpoint("http://localhost:5085/swagger/v1/swagger.json", "ProductService API v1");
+        c.SwaggerEndpoint("http://localhost:5106/swagger/v1/swagger.json", "OrderService API v1");
     });
 }
 
