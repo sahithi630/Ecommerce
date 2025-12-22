@@ -1,0 +1,97 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: ecommerce-sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrong@Passw0rd
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      - ecommerce-network
+
+  userservice:
+    build:
+      context: .
+      dockerfile: UserServices/Dockerfile
+    container_name: ecommerce-userservice
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:7000
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=UserServiceDB;User Id=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=true;
+      - JwtSettings__SecretKey=YourSuperSecretKeyThatIsAtLeast32CharactersLong
+      - JwtSettings__Issuer=ECommerceApp
+      - JwtSettings__Audience=ECommerceUsers
+    ports:
+      - "7000:7000"
+    depends_on:
+      - sqlserver
+    networks:
+      - ecommerce-network
+
+  productservice:
+    build:
+      context: .
+      dockerfile: ProductService/Dockerfile
+    container_name: ecommerce-productservice
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:7002
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=ProductServiceDB;User Id=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=true;
+      - JwtSettings__SecretKey=YourSuperSecretKeyThatIsAtLeast32CharactersLong
+      - JwtSettings__Issuer=ECommerceApp
+      - JwtSettings__Audience=ECommerceUsers
+    ports:
+      - "7002:7002"
+    depends_on:
+      - sqlserver
+    networks:
+      - ecommerce-network
+
+  orderservice:
+    build:
+      context: .
+      dockerfile: OrderService/Dockerfile
+    container_name: ecommerce-orderservice
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:7001
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=OrderServiceDB;User Id=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=true;
+      - JwtSettings__SecretKey=YourSuperSecretKeyThatIsAtLeast32CharactersLong
+      - JwtSettings__Issuer=ECommerceApp
+      - JwtSettings__Audience=ECommerceUsers
+    ports:
+      - "7001:7001"
+    depends_on:
+      - sqlserver
+    networks:
+      - ecommerce-network
+
+  apigateway:
+    build:
+      context: .
+      dockerfile: APIGateway/Dockerfile
+    container_name: ecommerce-apigateway
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5100
+    ports:
+      - "5100:5100"
+    depends_on:
+      - userservice
+      - productservice
+      - orderservice
+    networks:
+      - ecommerce-network
+
+volumes:
+  sqlserver_data:
+
+networks:
+  ecommerce-network:
+    driver: bridge

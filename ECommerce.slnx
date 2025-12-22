@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="APIGateway/APIGateway.csproj" />
+  <Project Path="OrderService/OrderService.csproj" Id="bb1bc838-56de-470f-bf24-5947bd214770" />
+  <Project Path="ProductService/ProductService.csproj" Id="9aac29a9-a0d4-46b4-8149-842cbac4a061" />
+  <Project Path="UserServices/UserServices.csproj" Id="e016ad86-c43d-4983-86dc-7c7915b6c95c" />
+</Solution>
