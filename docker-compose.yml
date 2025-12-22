@@ -22,13 +22,13 @@ services:
     container_name: ecommerce-userservice
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:7000
+      - ASPNETCORE_URLS=http://+:5162
       - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=UserServiceDB;User Id=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=true;
       - JwtSettings__SecretKey=YourSuperSecretKeyThatIsAtLeast32CharactersLong
       - JwtSettings__Issuer=ECommerceApp
       - JwtSettings__Audience=ECommerceUsers
     ports:
-      - "7000:7000"
+      - "5162:5162"
     depends_on:
       - sqlserver
     networks:
@@ -41,13 +41,13 @@ services:
     container_name: ecommerce-productservice
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:7002
+      - ASPNETCORE_URLS=http://+:5085
       - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=ProductServiceDB;User Id=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=true;
       - JwtSettings__SecretKey=YourSuperSecretKeyThatIsAtLeast32CharactersLong
       - JwtSettings__Issuer=ECommerceApp
       - JwtSettings__Audience=ECommerceUsers
     ports:
-      - "7002:7002"
+      - "5085:5085"
     depends_on:
       - sqlserver
     networks:
@@ -60,13 +60,13 @@ services:
     container_name: ecommerce-orderservice
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:7001
+      - ASPNETCORE_URLS=http://+:5106
       - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=OrderServiceDB;User Id=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=true;
       - JwtSettings__SecretKey=YourSuperSecretKeyThatIsAtLeast32CharactersLong
       - JwtSettings__Issuer=ECommerceApp
       - JwtSettings__Audience=ECommerceUsers
     ports:
-      - "7001:7001"
+      - "5106:5106"
     depends_on:
       - sqlserver
     networks:

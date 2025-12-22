@@ -23,17 +23,17 @@
 		},
 		{
 			"key": "user_service_url",
-			"value": "http://localhost:7000",
+			"value": "http://localhost:5162",
 			"type": "string"
 		},
 		{
 			"key": "product_service_url",
-			"value": "http://localhost:7002",
+			"value": "http://localhost:5085",
 			"type": "string"
 		},
 		{
 			"key": "order_service_url",
-			"value": "http://localhost:7001",
+			"value": "http://localhost:5106",
 			"type": "string"
 		},
 		{

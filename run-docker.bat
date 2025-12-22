@@ -36,9 +36,9 @@ echo ========================================
 echo.
 echo API Endpoints:
 echo   API Gateway:     http://localhost:5100
-echo   User Service:    http://localhost:7000/swagger
-echo   Product Service: http://localhost:7002/swagger
-echo   Order Service:   http://localhost:7001/swagger
+echo   User Service:    http://localhost:5162/swagger
+echo   Product Service: http://localhost:5085/swagger
+echo   Order Service:   http://localhost:5106/swagger
 echo.
 echo Database:
 echo   SQL Server:      localhost:1433

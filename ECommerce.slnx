@@ -1,4 +1,13 @@
 <Solution>
+  <Folder Name="/Docker/">
+    <File Path=".dockerignore" />
+    <File Path="docker-compose.yml" />
+    <File Path="run-docker.bat" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="ECommerce-API-Collection.postman_collection.json" />
+    <File Path="README.md" />
+  </Folder>
   <Project Path="APIGateway/APIGateway.csproj" />
   <Project Path="OrderService/OrderService.csproj" Id="bb1bc838-56de-470f-bf24-5947bd214770" />
   <Project Path="ProductService/ProductService.csproj" Id="9aac29a9-a0d4-46b4-8149-842cbac4a061" />

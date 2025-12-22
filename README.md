@@ -4,9 +4,9 @@ A microservices-based e-commerce application built with .NET Core, featuring Use
 
 ## Architecture
 
-- **UserService** (Port 7000): User registration, authentication, and JWT token management
-- **ProductService** (Port 7002): Product catalog management
-- **OrderService** (Port 7001): Order processing and management
+- **UserService** (Port 5162): User registration, authentication, and JWT token management
+- **ProductService** (Port 5085): Product catalog management
+- **OrderService** (Port 5106): Order processing and management
 - **APIGateway** (Port 5100): Centralized API gateway using Ocelot
 - **SQL Server**: Database for all services
 
@@ -82,26 +82,26 @@ docker-compose down -v
 
 Once running, access Swagger documentation:
 
-- **UserService**: http://localhost:7000/swagger
-- **ProductService**: http://localhost:7002/swagger
-- **OrderService**: http://localhost:7001/swagger
+- **UserService**: http://localhost:5162/swagger
+- **ProductService**: http://localhost:5085/swagger
+- **OrderService**: http://localhost:5106/swagger
 - **API Gateway**: http://localhost:5100
 
 ## Service Endpoints
 
-### UserService (http://localhost:7000)
+### UserService (http://localhost:5162)
 - `POST /api/user/register` - Register new user
 - `POST /api/user/login` - User login
 - `GET /api/user/{id}` - Get user by ID
 
-### ProductService (http://localhost:7002)
+### ProductService (http://localhost:5085)
 - `GET /api/product` - Get all products
 - `GET /api/product/{id}` - Get product by ID
 - `POST /api/product` - Create product (Auth required)
 - `PUT /api/product/{id}` - Update product (Auth required)
 - `DELETE /api/product/{id}` - Delete product (Auth required)
 
-### OrderService (http://localhost:7001)
+### OrderService (http://localhost:5106)
 - `GET /api/order` - Get user orders (Auth required)
 - `GET /api/order/{id}` - Get order by ID (Auth required)
 - `POST /api/order` - Create order (Auth required)
@@ -136,7 +136,7 @@ Import the provided Postman collection to test all APIs with pre-configured requ
 
 ### Common Issues
 
-1. **Port conflicts**: Ensure ports 5100, 7000, 7001, 7002, 1433 are available
+1. **Port conflicts**: Ensure ports 5100, 5162, 5106, 5085, 1433 are available
 2. **Database connection**: Wait for SQL Server container to be ready before services start
 3. **JWT errors**: Ensure all services use the same JWT secret key
 
