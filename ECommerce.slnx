@@ -6,7 +6,6 @@
   </Folder>
   <Folder Name="/Solution Items/">
     <File Path="ECommerce-API-Collection.postman_collection.json" />
-    <File Path="README.md" />
   </Folder>
   <Project Path="APIGateway/APIGateway.csproj" />
   <Project Path="OrderService/OrderService.csproj" Id="bb1bc838-56de-470f-bf24-5947bd214770" />

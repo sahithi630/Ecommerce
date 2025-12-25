@@ -43,6 +43,7 @@ namespace UserServices
             // DI
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<JwtService>();
 
             // Swagger
             builder.Services.AddEndpointsApiExplorer();
