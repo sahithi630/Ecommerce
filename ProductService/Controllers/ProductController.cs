@@ -35,6 +35,7 @@ namespace ProductService.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<ProductResponseDto>> CreateProduct(CreateProductDto createProductDto)
         {
             if (!ModelState.IsValid)
@@ -45,6 +46,7 @@ namespace ProductService.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<ProductResponseDto>> UpdateProduct(int id, UpdateProductDto updateProductDto)
         {
             if (!ModelState.IsValid)
@@ -58,6 +60,7 @@ namespace ProductService.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
             var result = await _productService.DeleteProductAsync(id);

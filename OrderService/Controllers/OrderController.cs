@@ -58,6 +58,7 @@ namespace OrderService.Controllers
         }
 
         [HttpPut("{id}/status")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<OrderResponseDto>> UpdateOrderStatus(int id, UpdateOrderStatusDto updateStatusDto)
         {
             if (!ModelState.IsValid)
@@ -71,6 +72,7 @@ namespace OrderService.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CancelOrder(int id)
         {
             var userId = User.FindFirst(ClaimTypes.Name)?.Value;
