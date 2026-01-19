@@ -43,7 +43,7 @@ namespace UserServices.Service
 
                 PasswordHash = hashedPassword,
 
-                //Role = request.Role
+                Role = request.Role
 
             };
 
@@ -71,7 +71,7 @@ namespace UserServices.Service
 
                 Token = token,
 
-                //Role = user.Role
+                Role = user.Role
 
             };
 

@@ -18,7 +18,11 @@ namespace UserServices.Models
         [Required(ErrorMessage = "Contact Number is required")]
         [RegularExpression(@"^\d{10}$", ErrorMessage = "Invalid contact number. It must be a 10-digit number.")]
         public string UserContactNumber { get; set; }
+        
         [Required]
         public string PasswordHash { get; set; }
+        
+        [Required]
+        public string Role { get; set; } = "User";
     }
 }

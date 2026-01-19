@@ -24,8 +24,8 @@ namespace UserServices.Service
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.UserEmail),
-                //new Claim(ClaimTypes.Role, user.Role), // Role will be "Doctor" or "Admin"
-                new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()) // 👈 Add DoctorId here
+                new Claim(ClaimTypes.Role, user.Role),
+                new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString())
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey));

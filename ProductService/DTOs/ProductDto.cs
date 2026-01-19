@@ -16,6 +16,7 @@ namespace ProductService.DTOs
 
         [StringLength(100)]
         public string Category { get; set; } = string.Empty;
+
     }
 
     public class UpdateProductDto
