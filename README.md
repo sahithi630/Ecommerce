@@ -4,7 +4,7 @@ A microservices-based e-commerce application built with .NET Core, featuring Use
 
 ## Architecture
 
-- **UserService** (Port 5162): User registration, authentication, and JWT token management
+- **UserService** (Port 5162): User registration, Role-based authentication, and JWT token management
 - **ProductService** (Port 5085): Product catalog management
 - **OrderService** (Port 5106): Order processing and management
 - **APIGateway** (Port 5100): Centralized API gateway using Ocelot
